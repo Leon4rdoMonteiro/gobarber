@@ -16,10 +16,10 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-      'prettier/prettier': 'error',
-      'no-param-reassign': "off",
-      'class-methods-use-this': 'off',
-      'camelcase': 'off',
-      'no-unused-vars': ['error', {'allowIgnorePattern': 'next'}]
+      "prettier/prettier": "error",
+      "class-methods-use-this": "off",
+      "no-param-reassign": "off",
+      "camelcase": "off",
+      "no-unused-vars": ["error", {"argsIgnorePattern": "next" }]
   },
 };
