@@ -11,6 +11,7 @@ import FileController from './app/controllers/FileController';
 import ProviderController from './app/controllers/ProviderController';
 import AppointmentController from './app/controllers/AppointmentController';
 import ScheduleController from './app/controllers/ScheduleController';
+import NotificationController from './app/controllers/NotificationController';
 
 const routes = new Router();
 
@@ -35,6 +36,10 @@ routes.post('/appointments', AppointmentController.store);
 
 // SCHEDULE ROUTE
 routes.get('/schedule', ScheduleController.index);
+
+// NOTIFICATION ROUTE
+routes.get('/notifications', NotificationController.index);
+routes.put('/notifications/:id', NotificationController.update);
 
 // FILE ROUTE
 routes.post('/files', upload.single('file'), FileController.store);
