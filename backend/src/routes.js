@@ -19,13 +19,13 @@ const routes = new Router();
 const upload = multer(multerConfig)
 
 // TEST ROUTE
-routes.get('/', ({ res }) => {
-    return res.send('Servidor em fase de testes! :)');
-});
 
 // SESSION ROUTE
 routes.post('/sessions', SessionController.store);
 
+routes.get('/', ({ res }) =>
+    res.send('Servidor em fase de testes! :)')
+);
 // MIDDLEWARE ROUTE
 routes.use(authMiddleware);
 
