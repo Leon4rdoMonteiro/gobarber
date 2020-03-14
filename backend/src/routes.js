@@ -19,7 +19,7 @@ const routes = new Router();
 const upload = multer(multerConfig)
 
 // TEST ROUTE
-routes.post('/', ({ res }) => {
+routes.get('/', ({ res }) => {
     return res.send('Servidor em fase de testes! :)');
 });
 
