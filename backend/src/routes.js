@@ -18,6 +18,11 @@ const routes = new Router();
 
 const upload = multer(multerConfig)
 
+// TEST ROUTE
+routes.post('/', ({ res }) => {
+    return res.send('Servidor em fase de testes! :)');
+});
+
 // SESSION ROUTE
 routes.post('/sessions', SessionController.store);
 
