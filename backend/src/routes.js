@@ -23,7 +23,7 @@ const upload = multer(multerConfig)
 // SESSION ROUTE
 routes.post('/sessions', SessionController.store);
 
-routes.get('/', ({ res }) =>
+routes.get('/', (req, res) =>
     res.send('Servidor em fase de testes! :)')
 );
 // MIDDLEWARE ROUTE
