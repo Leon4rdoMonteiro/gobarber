@@ -14,24 +14,30 @@ import ScheduleController from './app/controllers/ScheduleController';
 import NotificationController from './app/controllers/NotificationController';
 import AvailableController from './app/controllers/AvailableController'
 
+
+import validateUserStore from './app/validations/UserStore';
+import validateUserUpdate from './app/validations/UserUpdate';
+import validateSessionStore from './app/validations/SessionStore';
+import validateAppointmentStore from './app/validations/AppointmentStore';
+
 const routes = new Router();
 
 const upload = multer(multerConfig)
 
 // TEST ROUTE
+routes.get('/', (req, res) =>
+    res.send('Server running with success! :)')
+);
 
 // SESSION ROUTE
-routes.post('/sessions', SessionController.store);
+routes.post('/sessions', validateSessionStore, SessionController.store);
 
-routes.get('/', (req, res) =>
-    res.send('Servidor em fase de testes! :)')
-);
 // MIDDLEWARE ROUTE
 routes.use(authMiddleware);
 
 // USER ROUTES
-routes.post('/users', UserController.store);
-routes.put('/users', UserController.update);
+routes.post('/users', validateUserStore, UserController.store);
+routes.put('/users', validateUserUpdate, UserController.update);
 
 // PROVIDER ROUTES
 routes.get('/providers', ProviderController.index);
@@ -39,7 +45,7 @@ routes.get('/providers/:providerId/available', AvailableController.index);
 
 // APPOINTMENT ROUTES
 routes.get('/appointments', AppointmentController.index);
-routes.post('/appointments', AppointmentController.store);
+routes.post('/appointments', validateAppointmentStore, AppointmentController.store);
 routes.delete('/appointments/:id', AppointmentController.destroy);
 
 // SCHEDULE ROUTE
