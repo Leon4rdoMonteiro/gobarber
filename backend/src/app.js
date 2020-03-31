@@ -17,7 +17,6 @@ import sentryConfig from './config/sentry';
 import routes from './routes';
 
 import './database';
-import RedisStore from 'rate-limit-redis';
 
 class App {
   constructor() {
