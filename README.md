@@ -1,2 +1,2 @@
 # GoBarber
-Aplicação desenvolvida no Bootcamp GoStack da Rocketseat - 2019
+:scissors: API developed for barber shops in GoStack Bootcamp - Rocketseat. 
